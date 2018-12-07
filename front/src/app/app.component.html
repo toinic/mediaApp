@@ -1,0 +1,34 @@
+<header class="sticky-top header">
+  <div class="bg-dark text-light">
+    <div class="d-flex flex-row justify-content-between align-items-center">
+        <a href="/" class="navbar-brand">
+          <span id="myLogo">AL</span>
+          Media App Angular
+        </a>
+        <nav class="navbar navbar-expand-sm navbar-dark">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item active">
+                <a class="nav-link" routerLink="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/medias">Medias</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+    </div>
+  </div>
+</header>
+
+<router-outlet></router-outlet>
+
+<footer class="mt-auto footer">
+  <div class="d-flex flex-row justify-content-center align-items-center bg-dark p-5">
+    <span>Application made with <a href="https://angular.io/">Angular</a>,&nbsp;</span>
+    <span>by <a href="https://twitter.com/anlafon">@Antoine Lafon</a>.</span>
+  </div>
+</footer>

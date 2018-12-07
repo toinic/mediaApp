@@ -1,0 +1,35 @@
+<div class="content">
+  <h2 class="font-italic" style="margin-bottom:2rem"><span class="font-weight-light">List of</span> <span style="color:#d9534f"> Medias</span> <span class="font-weight-light"> to loan</span></h2>
+
+  <div class="filters form-inline justify-content-between">
+    <select class="form-control form-control-sm" [(ngModel)]="type" (change)="getMedias()">
+      <option value="0">Filter by type</option>
+      <option value="livre">Livre</option>
+      <option value="audio">Musique</option>
+      <option value="film">Film</option>
+    </select>
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="search" (change)="getMedias()" placeholder="Search by Author">
+    <input class="form-control form-control-sm" type="text" [(ngModel)]="user" placeholder="Enter username to loan">
+  </div>
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6" *ngFor="let media of medias">
+      <div class="card bg-white text-dark border-0" style="margin-bottom:1rem;">
+        <div class="card-header bg-white p-0 text-center border-0">
+          <!-- <a [routerLink]="['/details-album/', album.name]"> -->
+            <img class="card-img-top" src="http://localhost:8000/upload/covers/{{media.cover}}">
+          <!-- </a> -->
+        </div>
+        <div class="card-body bg-dark text-light">
+          <h5 class="card-title"> {{media.title}}</h5>
+          <p class="card-text">{{media.author}}</p>
+        </div>
+        <div class="card-footer bg-grey d-flex justify-content-between align-items-center">
+          <span class="card-text small">{{media.type | uppercase}}</span>
+          <!-- <span class="card-text float-right small" *ngIf="user.length>3">Button</span> -->
+          <a class="text-myred small" *ngIf="user.length>3" (click)="postLoan(media.id)">LOAN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

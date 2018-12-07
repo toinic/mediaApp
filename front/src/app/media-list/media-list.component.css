@@ -1,0 +1,7 @@
+.filters{
+  margin-bottom:2rem;
+}
+
+.filters input, .filters select{
+  margin-bottom:.5rem;
+}
